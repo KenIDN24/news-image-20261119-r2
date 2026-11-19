@@ -1,0 +1,5 @@
+The two TrueType files in this directory are Liberation Sans (Regular and
+Bold), Copyright (c) 2007-2012 Red Hat, Inc., released under the Liberation
+Fonts license (SIL Open Font License 1.1 terms). They are included only as
+the source from which gen_fonts.py baked the glyph coverage maps in
+../fonts.bin; main.py never reads them at runtime.
