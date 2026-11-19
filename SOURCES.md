@@ -3,9 +3,10 @@
 Every story on this page was reported on Thursday 19 November 2026 and
 cross-checked against reputable wire, broadsheet or broadcaster
 coverage of that day (two stories broke late on Wednesday 18 November
-and are marked as such). Compiled 19 Nov 2026. The page carries 13
-stories: 3 lead panels, 9 grid cards and 1 closing banner. All figures
-are exactly as reported; nothing is rounded up or hyped.
+and are marked as such). Compiled 19 Nov 2026. The page carries 38
+stories: 3 lead panels, 9 grid cards, 1 gaming banner and 25 numbered
+briefs (14–38) in the "Also on Thursday" columns. All figures are
+exactly as reported; nothing is rounded up or hyped.
 
 ## Leads
 
@@ -95,3 +96,45 @@ ties a key pillar of the relationship.
 out worldwide on Thursday 19 November, with launch-day queues and
 midnight openings as the rollout reached each timezone.
 — Games press and retailer reporting, 19 Nov.
+
+## Briefs (14–38, "Also on Thursday")
+
+14. The European Commission proposed a €45 billion loan for Ukraine
+for 2027 — €25 billion for weapons and €20 billion for civilian needs.
+15. Leaders of the Coalition of the Willing met in Berlin on Ukraine.
+16. North Korea fired ballistic missiles after a US–South Korea–Japan
+drill, per the Munich Eye's 19 Nov listing.
+17. Estonia announced it will close border crossings with Russia from
+December.
+18. A general strike in Spain disrupted ports and factories.
+19. France saw a fourth weekend of cost-of-living protests.
+20. Israel's president tapped Gadi Eisenkot to form a government,
+bypassing Benjamin Netanyahu.
+21. Australia, Canada, Italy and the UK urged Israel to let aid into
+flooded Gaza.
+22. The US State Department reported $12 billion in Venezuelan oil
+and mineral revenue.
+23. Myanmar awaited the ICJ's ruling in the Rohingya genocide case.
+24. Pew Research: Islam is on track to be the world's largest
+religion by 2035.
+25. Oil fell 4.4% to about $82.19 (WTI) on a US crude inventory build.
+26. Gold fell 3.21% to $3,725.
+27. The dollar index held at a 19-month high near 103.81.
+28. UnitedHealth fell 10.2% on a CMS anti-fraud proposal (Humana fell
+13%).
+29. AMD rose 5.3% and Palo Alto Networks 10% on Wednesday's close.
+30. European stocks fell about 1% to a two-week low.
+31. German police warned of rising hybrid threats.
+32. A Russian national was held over alleged spying on US firm
+Palantir.
+33. World COPD Day spotlighted early diagnosis of the lung disease.
+34. India's Congress targeted the Modi government over inflation.
+35. Australia sanctioned West Bank settler groups.
+36. England's Ben Duckett scored 133 in the third ODI against
+Australia.
+37. Veteran US actor Stacy Keach died at 85.
+38. House Democrats ordered Trump allies to preserve records ahead of
+congressional probes.
+
+— Briefs compiled from Reuters, AP, BBC, Al Jazeera, CNN and UN News
+reporting of 19 November 2026, as cited in the day's news round-ups.

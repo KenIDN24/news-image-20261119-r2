@@ -325,7 +325,7 @@ def art_shenzhen(cv, x, y, w, h):
     """Skyline under a red sun, three flag chips for the three powers."""
     cv.fill(x, y, w, h, SKY)
     cv.circle(x + w - 52, y + 30, 17, RED)
-    heights = [38, 62, 48, 78, 56, 88, 66, 44, 72, 52, 82, 60, 40, 68]
+    heights = [26, 44, 34, 56, 40, 64, 48, 30, 52, 36, 60, 42, 28, 50]
     bw = w // len(heights)
     for i, bh in enumerate(heights):
         bx = x + i * bw + 2
@@ -379,18 +379,18 @@ def art_gaza(cv, x, y, w, h):
 def art_speaker(cv, x, y, w, h):
     """House bars: Democrats 259, Republicans 176, 218 to win."""
     cv.fill(x, y, w, h, (240, 238, 232))
-    rows = [("DEM", 259, NAVY, 30), ("REP", 176, RED, 74)]
+    rows = [("DEM", 259, NAVY, 26), ("REP", 176, RED, 58)]
     maxv = 280
     win_x = x + 52 + (w - 130) * 218 // maxv
-    cv.fill(win_x, y + 8, 2, h - 30, INK)
-    draw_text(cv, "bold", 12, win_x - 24, y + h - 20, "218 TO WIN", INK)
+    cv.fill(win_x, y + 6, 2, h - 24, INK)
+    draw_text(cv, "bold", 10, win_x - 20, y + h - 14, "218 TO WIN", INK)
     for label, val, colour, dy in rows:
-        draw_text(cv, "bold", 15, x + 10, y + dy - 16, label, colour)
+        draw_text(cv, "bold", 13, x + 10, y + dy - 13, label, colour)
         bw = (w - 130) * val // maxv
-        cv.fill(x + 52, y + dy - 14, bw, 20, colour)
+        cv.fill(x + 52, y + dy - 12, bw, 16, colour)
         num = str(val)
-        draw_text(cv, "bold", 26, x + w - 8 - measure("bold", 26, num),
-                  y + dy - 20, num, colour)
+        draw_text(cv, "bold", 22, x + w - 8 - measure("bold", 22, num),
+                  y + dy - 17, num, colour)
 
 
 # ---------------------------------------------------------------- icons
@@ -516,7 +516,7 @@ def icon_palm(cv, x, y, s, colour):
 
 # ---------------------------------------------------------------- layout
 
-MARGIN = 28
+MARGIN = 24
 WIDTH = PAGE - 2 * MARGIN
 
 
@@ -534,13 +534,13 @@ def text_block(cv, face, size, x, y, text, colour, width, line_h, max_lines=3):
 
 
 def masthead(cv):
-    draw_text(cv, "bold", 17, MARGIN, 16, "THE DAY IN WORLD NEWS", INK, tracking=3)
-    right = "13 STORIES · 3 CONTINENTS · ONE DAY"
+    draw_text(cv, "bold", 17, MARGIN, 10, "THE DAY IN WORLD NEWS", INK, tracking=3)
+    right = "38 STORIES · 5 CONTINENTS · ONE DAY"
     draw_text(cv, "bold", 15, PAGE - MARGIN - measure("bold", 15, right, 2),
-              17, right, RED, tracking=2)
-    cv.fill(MARGIN, 46, WIDTH, 3, INK)
+              11, right, RED, tracking=2)
+    cv.fill(MARGIN, 36, WIDTH, 3, INK)
     size = fit_size("bold", 84, "Thursday 19 November 2026", WIDTH)
-    draw_text(cv, "bold", size, MARGIN, 56, "Thursday 19 November 2026", INK)
+    draw_text(cv, "bold", size, MARGIN, 44, "Thursday 19 November 2026", INK)
 
 
 STATS = [
@@ -554,17 +554,17 @@ STATS = [
 
 
 def stat_strip(cv, y):
-    cv.fill(MARGIN, y, WIDTH, 60, (240, 236, 226))
+    cv.fill(MARGIN, y, WIDTH, 54, (240, 236, 226))
     cv.fill(MARGIN, y, WIDTH, 2, INK)
-    cv.fill(MARGIN, y + 58, WIDTH, 2, INK)
+    cv.fill(MARGIN, y + 52, WIDTH, 2, INK)
     col = WIDTH // len(STATS)
     for i, (num, label, colour) in enumerate(STATS):
         x = MARGIN + i * col + 12
-        draw_text(cv, "bold", 28, x, y + 5, num, colour)
+        draw_text(cv, "bold", 26, x, y + 4, num, colour)
         for j, part in enumerate(label.split("\n")):
-            draw_text(cv, "bold", 10, x + 1, y + 37 + j * 11, part, FAINT, tracking=1)
+            draw_text(cv, "bold", 10, x + 1, y + 33 + j * 11, part, FAINT, tracking=1)
         if i:
-            cv.fill(MARGIN + i * col, y + 7, 1, 44, RULE)
+            cv.fill(MARGIN + i * col, y + 6, 1, 42, RULE)
 
 
 LEADS = [
@@ -583,41 +583,41 @@ LEADS = [
 def lead_panel(cv, x, y, w, h, art, colour, kicker, head, fact):
     cv.frame(x, y, w, h, RULE, 1)
     cv.fill(x, y, w, 6, colour)
-    art(cv, x + 8, y + 14, w - 16, 112)
-    ky = y + 136
-    draw_text(cv, "bold", 13, x + 12, ky, kicker, colour, tracking=1)
-    hy = text_block(cv, "bold", 26, x + 12, ky + 22, head, INK, w - 24, 30, 3)
-    text_block(cv, "regular", 15, x + 12, hy + 4, fact, (58, 56, 52), w - 24, 19, 3)
+    art(cv, x + 8, y + 10, w - 16, 78)
+    ky = y + 96
+    draw_text(cv, "bold", 12, x + 12, ky, kicker, colour, tracking=1)
+    hy = text_block(cv, "bold", 23, x + 12, ky + 18, head, INK, w - 24, 27, 2)
+    text_block(cv, "regular", 13, x + 12, hy + 3, fact, (58, 56, 52), w - 24, 16, 2)
 
 
 CARDS = [
     (icon_chip, NAVY, "BUSINESS · AI",
      "Anthropic IPO is biggest ever: $81.3bn",
-     "Priced at $83 a share; the Claude maker is valued near $1.5tn."),
+     "Priced at $83 a share; valued near $1.5 trillion."),
     (icon_bridge, RED, "EUROPE · UKRAINE WAR",
      "Crimea bridge hit again; Odesa toll rises",
-     "Kerch traffic halted; Russian strikes on Odesa kill four."),
+     "Kerch traffic halted; strikes on Odesa kill four."),
     (icon_chart_down, RED, "MARKETS · US",
      "Dow falls 561 as Fed hints at hike",
-     "Fifth straight fall for the S&P; Nvidia beats, yet slips 2.9%."),
+     "Fifth S&P fall in a row; Nvidia beats, slips 2.9%."),
     (icon_probe, TEAL, "SCIENCE · SPACE",
      "Voyager 1 passes one light-day",
-     "16.1bn miles out; its signals now take a full 24 hours."),
+     "16.1bn miles out; signals take a full 24 hours."),
     (icon_flower, GOLD, "CULTURE · ART",
      "Van Gogh sells for record $190.4m",
-     "Chestnut Trees in Flower tops the old $117m record."),
+     "Chestnut Trees in Flower tops the $117m record."),
     (icon_leaf, TEAL, "CLIMATE · COP31",
      "COP31 deadlocked with two days left",
-     "21 issues still open in Antalya; OPEC defends fossil fuels."),
+     "21 issues open in Antalya; OPEC defends fossil fuels."),
     (icon_crowd, NAVY, "EUROPE · PROTEST",
      "Prague fills streets for free media",
-     "Hundreds of thousands defend media independence."),
+     "Hundreds of thousands defend media freedom."),
     (icon_cyclone, TEAL, "WEATHER · INDIA",
      "Cyclone Akvan nears India coast",
-     "Landfall is seen between Machilipatnam and Puri."),
+     "Landfall seen between Machilipatnam and Puri."),
     (icon_shield, NAVY, "ASIA · DEFENCE",
      "India, Japan open 2+2 talks in Tokyo",
-     "Defence and security ties top the ministers' agenda."),
+     "Defence and security ties top the agenda."),
 ]
 
 
@@ -628,20 +628,71 @@ def tint_of(colour):
 def card(cv, x, y, w, h, icon, colour, kicker, head, fact):
     cv.fill(x, y, w, 3, colour)
     cv.frame(x, y, w, h, RULE, 1)
-    cv.fill(x + 1, y + 3, w - 2, 50, tint_of(colour))
-    icon(cv, x + 10, y + 10, 42, colour)
-    draw_text(cv, "bold", 12, x + 62, y + 24, kicker, colour, tracking=1)
-    hy = text_block(cv, "bold", 20, x + 12, y + 56, head, INK, w - 24, 23, 2)
-    text_block(cv, "regular", 13, x + 12, hy + 3, fact, (58, 56, 52), w - 24, 16, 2)
+    cv.fill(x + 1, y + 3, w - 2, 40, tint_of(colour))
+    icon(cv, x + 10, y + 8, 30, colour)
+    draw_text(cv, "bold", 11, x + 50, y + 17, kicker, colour, tracking=1)
+    hy = text_block(cv, "bold", 17, x + 12, y + 46, head, INK, w - 24, 20, 2)
+    text_block(cv, "regular", 11, x + 12, hy + 2, fact, (58, 56, 52), w - 24, 14, 1)
+
+
+BRIEFS = [
+    "EU proposes a €45bn loan for Ukraine for 2027: €25bn for arms, €20bn civilian.",
+    "Coalition of the Willing leaders meet in Berlin on Ukraine.",
+    "North Korea fires ballistic missiles after a US–Korea–Japan drill.",
+    "Estonia to close its border crossings with Russia from December.",
+    "A general strike in Spain disrupts ports and factories.",
+    "France sees a fourth weekend of cost-of-living protests.",
+    "Israel's president taps Eisenkot to form a government, bypassing Netanyahu.",
+    "Australia, Canada, Italy and the UK urge Israel to let aid into flooded Gaza.",
+    "US reports $12bn in Venezuelan oil and mineral revenue.",
+    "Myanmar awaits the ICJ ruling in the Rohingya genocide case.",
+    "Pew: Islam is on track to be the world's largest religion by 2035.",
+    "Oil falls 4.4% to $82.19 on a US crude inventory build.",
+    "Gold falls 3.21% to $3,725.",
+    "The dollar index holds at a 19-month high near 103.81.",
+    "UnitedHealth falls 10.2% on a CMS anti-fraud proposal.",
+    "AMD rises 5.3%; Palo Alto Networks jumps 10%.",
+    "European stocks fall about 1% to a two-week low.",
+    "German police warn of rising hybrid threats.",
+    "A Russian national is held over alleged spying on Palantir.",
+    "World COPD Day spotlights early diagnosis of lung disease.",
+    "India's Congress targets the Modi government over inflation.",
+    "Australia sanctions West Bank settler groups.",
+    "England's Duckett scores 133 in the third ODI vs Australia.",
+    "Veteran US actor Stacy Keach dies at 85.",
+    "House Democrats order Trump allies to preserve records.",
+]
+
+BRIEF_COLS = (BRIEFS[0:7], BRIEFS[7:16], BRIEFS[16:25])
+
+
+def briefs_section(cv, y):
+    cv.fill(MARGIN, y, WIDTH, 2, INK)
+    draw_text(cv, "bold", 15, MARGIN, y + 8, "ALSO ON THURSDAY", INK, tracking=2)
+    right = "25 MORE STORIES"
+    draw_text(cv, "bold", 12, PAGE - MARGIN - measure("bold", 12, right, 2),
+              y + 10, right, RED, tracking=2)
+    top = y + 34
+    col_w = (WIDTH - 2 * 16) // 3
+    num0 = 14
+    for c, col in enumerate(BRIEF_COLS):
+        x = MARGIN + c * (col_w + 16)
+        cy = top
+        for j, text in enumerate(col):
+            num = str(num0 + sum(len(k) for k in BRIEF_COLS[:c]) + j)
+            draw_text(cv, "bold", 10.5, x, cy, num, RED)
+            cy = text_block(cv, "regular", 10.5, x + 24, cy, text,
+                            (46, 44, 40), col_w - 24, 13, 2) + 3
+    return cy
 
 
 def banner(cv, y):
-    h = 54
+    h = 40
     cv.frame(MARGIN, y, WIDTH, h, RULE, 1)
     cv.fill(MARGIN, y, 6, h, GOLD)
-    icon_palm(cv, MARGIN + 16, y + 5, 44, TEAL)
-    draw_text(cv, "bold", 23, MARGIN + 74, y + 8, "GTA VI launch day stuns players", INK)
-    draw_text(cv, "regular", 14, MARGIN + 74, y + 34,
+    icon_palm(cv, MARGIN + 14, y + 5, 30, TEAL)
+    draw_text(cv, "bold", 19, MARGIN + 60, y + 3, "GTA VI launch day stuns players", INK)
+    draw_text(cv, "regular", 11, MARGIN + 60, y + 24,
               "Worldwide rollout reaches every timezone; launch-day queues wrap blocks.", FAINT)
     right = "CULTURE · GAMING"
     draw_text(cv, "bold", 12, PAGE - MARGIN - measure("bold", 12, right, 1) - 12,
@@ -651,25 +702,28 @@ def banner(cv, y):
 def build_page():
     cv = Canvas()
     masthead(cv)
-    stat_strip(cv, 140)
-    lead_y, lead_h, gap = 212, 272, 12
+    stat_strip(cv, 118)
+    lead_y, lead_h, gap = 180, 208, 12
     lead_w = (WIDTH - 2 * gap) // 3
     for i, (art, colour, kicker, head, fact) in enumerate(LEADS):
         lead_panel(cv, MARGIN + i * (lead_w + gap), lead_y, lead_w, lead_h,
                    art, colour, kicker, head, fact)
-    grid_y = lead_y + lead_h + 10
-    card_w, card_h, cgap = lead_w, 138, gap
+    grid_y = lead_y + lead_h + 8
+    card_w, card_h, cgap = lead_w, 100, gap
     for i, (icon, colour, kicker, head, fact) in enumerate(CARDS):
         r, c = divmod(i, 3)
         card(cv, MARGIN + c * (card_w + cgap), grid_y + r * (card_h + 9),
              card_w, card_h, icon, colour, kicker, head, fact)
-    banner(cv, grid_y + 3 * card_h + 2 * 9 + 10)
-    fy = PAGE - 22
-    cv.fill(MARGIN, fy - 7, WIDTH, 1, RULE)
-    draw_text(cv, "regular", 11, MARGIN, fy,
-              "Every story was reported on Thursday 19 November 2026", FAINT)
+    banner_y = grid_y + 3 * card_h + 2 * 9 + 8
+    banner(cv, banner_y)
+    briefs_section(cv, banner_y + 48)
+    fy = PAGE - 20
+    cv.fill(MARGIN, fy - 6, WIDTH, 1, RULE)
+    draw_text(cv, "bold", 10, MARGIN, fy, "DATE CHECK", RED, tracking=1)
+    draw_text(cv, "regular", 10, MARGIN + 74, fy,
+              "— every story on this page was reported on Thursday 19 November 2026", FAINT)
     src = "Sources: Reuters · AP · BBC · Al Jazeera · CNN · UN News · NASA · Sotheby's"
-    draw_text(cv, "regular", 11, PAGE - MARGIN - measure("regular", 11, src),
+    draw_text(cv, "regular", 10, PAGE - MARGIN - measure("regular", 10, src),
               fy, src, FAINT)
     return cv
 
